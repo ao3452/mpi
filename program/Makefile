@@ -1,7 +1,7 @@
 # Makefile
 # プログラム名とオブジェクトファイル名
 program = Mpi
-OBJ     = mpi1.o
+OBJ     = mpi2.o
 OPT	= -O2 -Wall
 LINK    = $(HOME)/zemi/b4kadai/MPI/include
 CC      = gcc
