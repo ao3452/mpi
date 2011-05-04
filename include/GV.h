@@ -18,9 +18,12 @@
 #include "define.h"		/* 定数宣言 */
 #include "function.h"           /* 関数宣言 */
 
-GLOBAL Goods_Table G_goods_table[TABLE_MAX];
+GLOBAL int G_knap_weight_MAX;
+GLOBAL int G_knap_number_MAX;
+//GLOBAL Goods_Table G_goods_table[TABLE_MAX];
 GLOBAL FILE *infile;
 GLOBAL Goods_Table G_knap;
-GLOBAL char G_knap_in_name[20][CHAR_MAX];
+GLOBAL char G_knap_in_name[TABLE_MAX][CHAR_MAX];
 GLOBAL int G_knap_number;
 GLOBAL int G_number;
+

@@ -6,3 +6,4 @@ GLOBAL void knapsack_program(void);	/* ナップザック問題の解法 */
 GLOBAL void knap_check(void);	/* ナップザック問題の解法 */
 GLOBAL void error(char *);	/* エラー出力用 */
 GLOBAL void debug(char *);	/* デバッグ用 */
+GLOBAL void load(void);		/* ファイル読み込み用関数 */

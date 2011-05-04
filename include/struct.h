@@ -2,11 +2,9 @@
 
 /* 荷物表 */
 typedef struct _goods_table {
-  char name[CHAR_MAX];		/* 荷物の名前 */
   int  weight;   		/* 重さ */
   int  value;			/* 価値 */
   int  flag;
-
 }Goods_Table;
 
  

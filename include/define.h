@@ -5,9 +5,9 @@
 #define DEBUG 	
 
 #define CHAR_MAX 256
-#define TABLE_MAX 256
-#define KNAP_WEIGHT_MAX 100
-#define KNAP_VALUE_MAX 100
+#define TABLE_MAX 1000
+#define KNAP_WEIGHT_MAX 1000
+#define KNAP_VALUE_MAX 1000
 
 #define ON 1
 #define OFF 0
