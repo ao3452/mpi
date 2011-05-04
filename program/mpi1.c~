@@ -1,4 +1,0 @@
-#define GLOBAL_INSTANCE 	/* メインプログラム */
-#include "../include/GV.h"	/* ヘッダファイル　GVのインクルード */
-
-
