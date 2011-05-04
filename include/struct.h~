@@ -1,0 +1,10 @@
+/* 構造体の宣言 */
+
+/* 荷物表 */
+typedef struct {
+  char name[CHAR_MAX];		/* 荷物の名前 */
+  int  weight;   		/* 重さ */
+  int  value;			/* 価値 */
+  int  flag;
+
+}GOODS_TABLE; 
