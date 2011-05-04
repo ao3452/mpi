@@ -19,12 +19,15 @@ int main(int argc, char *argv[]){
     fprintf(stderr,"Source gile %s can't open.\n",argv[1]);
     exit(1);
   }
-
+  fscanf(infile,"%s",weight_char);
+  fscanf(infile,"%s",value_char);
+  G_knap_weight_MAX=atoi(weight_char);
+  G_knap_number_MAX=atoi(value_char);
   /* ファイルからの読み込み */
-  while(fscanf(infile,"%s %s %s",G_goods_table[G_number].name,weight_char,value_char)!=EOF){
+  while(fscanf(infile,"%s %s",weight_char,value_char)!=EOF){
     G_goods_table[G_number].weight=atoi(weight_char);
     G_goods_table[G_number].value=atoi(value_char);
-      printf("%s %d %d\n",G_goods_table[G_number].name,G_goods_table[G_number].weight,G_goods_table[G_number].value);
+      printf("%d %d\n",G_goods_table[G_number].weight,G_goods_table[G_number].value);
     G_number++;
   }
   printf("\n");
@@ -38,26 +41,26 @@ int main(int argc, char *argv[]){
 /* ナップザック問題を解くプログラム　主にknap_check関数を実行して表示する */
 void knapsack_program(void){
   int i;
+
   for(i=0;i<G_number;i++)
     knap_check();
-  for(i=0;i<G_knap_number;i++)
-    printf("%s\n",G_knap_in_name[i]);
-  printf("value = %d\n",G_knap.value);
-  printf("weight = %d\n",G_knap.weight);
+  printf("allvalue = %d\n",G_knap.value);
+  printf("allweight = %d\n",G_knap.weight);
 }
 
 /* グローバル変数初期化関数 */
 void first_init(void){
   int i;
-  for(i=0;i<TABLE_MAX;i++){
+  for(i=0;i<G_knap_number_MAX;i++){
     G_goods_table[i].weight=0;
     G_goods_table[i].value=0;
     G_goods_table[i].flag=OFF;
   }
-  G_knap.weight=KNAP_WEIGHT_MAX;
+  G_knap.weight=G_knap_weight_MAX;
   G_knap.value=0;
   G_knap_number=0;
   G_number=0;
+
 }
 
 /*  ナップザック問題の肝となる部分　価値/重さの高い順から入れ、
@@ -76,20 +79,22 @@ void knap_check(){
 	  value_max=tmp;
 	  ret=i;
 	  flag=1;
+
 	}
       }
       else{
 	  value_max=tmp;
 	  ret=i;
 	  flag=1;
+
       }
     }
   }
 
-  if((weight=G_knap.weight-G_goods_table[ret].weight)>=0&&flag==1){
+  if((weight=G_knap.weight+G_goods_table[ret].weight)<=KNAP_WEIGHT_MAX&&flag==1){
+    printf("%d %d\n",G_goods_table[ret].value,G_goods_table[ret].weight);
     G_knap.weight=weight;
     G_knap.value+=G_goods_table[ret].value;
-    strcpy(G_knap_in_name[G_knap_number++],G_goods_table[ret].name);
     G_goods_table[ret].flag=ON;
   }
 

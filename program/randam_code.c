@@ -34,7 +34,7 @@ int main(void){
   for(i = 0; i < RANDAM_NUMBER; i ++){
     /* passwrd(s[i], 10, 4); */
     /* fprintf(outfile,"%s %d %d\n", s[i], (int)RAND(1,RANDAM_WEIGHT_MAX),(int)RAND(0,RANDAM_VALUE_MAX)); */
-    fprintf(outfile,"%d %d\n",(int)RAND(1,RANDAM_WEIGHT_MAX),(int)RAND(0,RANDAM_VALUE_MAX)); 
+    fprintf(outfile,"%d %d\n",(int)RAND(100,RANDAM_WEIGHT_MAX),(int)RAND(300,RANDAM_VALUE_MAX)); 
   }
   fclose(outfile);
   return 0;
