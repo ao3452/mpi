@@ -1,11 +1,9 @@
 #!/bin/sh
-git rm *~
+rm *~
 git add ../program
 git commit -m 'program'
-cd ../include/
-git rm *~
+rm ../include/*~
 git add ../include
 git commit -m 'include'
 git push origin master
-cd ../program/
 
